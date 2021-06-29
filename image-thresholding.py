@@ -4,9 +4,8 @@ import matplotlib.pyplot as plt
 
 
 img = cv2.imread(
-    '/home/malcroft/Documents/Computer-Vision-with-Python/Computer-Vision-with-Python/DATA/crossword.jpg', 0,)
-img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-img = img.astype(np.uint8)
+    '/home/malcroft/Documents/Computer-Vision-with-Python/Computer-Vision-with-Python/DATA/crossword.jpg', 0)
+# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 
 def show_pic(img):
@@ -25,4 +24,9 @@ th2 = cv2.adaptiveThreshold(
     img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 8)
 
 
-show_pic(th2)
+# blending the two ways
+
+blended = cv2.addWeighted(th1, 0.6, th2, 0.4, 0)
+
+
+show_pic(blended)
