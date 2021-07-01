@@ -17,9 +17,9 @@ def draw_circle(event, x, y, flags, param):
         cv2.circle(img, (x, y), 80, (0, 0, 255), -1)
         count += 1
 
-    elif event == cv2.EVENT_LBUTTONUP:
-        cv2.circle(img, (x, y), 80, (0, 0, 0), -1)
-        count += 1
+    # elif event == cv2.EVENT_LBUTTONUP:
+    #     cv2.circle(img, (x, y), 80, (0, 0, 0), -1)
+    #     count += 1
 
 
 cv2.namedWindow(winname='my_drawing')
